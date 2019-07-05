@@ -20,7 +20,7 @@ task :shell do
   host = hosts[i]
   options = host.netssh_options
 
-  cmd = ['ssh', '-t']
+  cmd = ['ssh', '-tt']
   cmd << '-A' if options[:forward_agent]
   Array(options[:keys]).each do |key|
     cmd << '-i'
